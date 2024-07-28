@@ -1,21 +1,20 @@
 ---
-title: 🎉 Easily create your own simple yet highly customizable blog
-summary: Take full control of your personal brand and privacy by migrating away from the big tech platforms!
-date: 2023-10-27
+title: "Predictive Modelling for Airbnb: Enhancing Rental Price Predictions and Host Strategies"
+summary: "Explore our project focused on developing predictive models for Airbnb rental prices and uncovering insights to help hosts optimize their listings."
+date: 2022-06-01
 
 # Featured image
-# Place an image named `featured.jpg/png` in this page's folder and customize its options here.
+# Place an image named 'featured.jpg/png' in this page's folder and customize its options here.
 image:
-  caption: 'Image credit: [**Unsplash**](https://unsplash.com)'
+  caption:
 
 authors:
   - admin
-  - Ted
 
 tags:
-  - Academic
-  - Hugo Blox
-  - Markdown
+  - Data Mining
+  - Machine Learning
+  - Predictive Modelling
 ---
 
 Welcome 👋
@@ -24,63 +23,59 @@ Welcome 👋
 
 ## Overview
 
-1. The Hugo Blox website builder for Hugo, along with its starter templates, is designed for professional creators, educators, and teams/organizations - although it can be used to create any kind of site
-2. The template can be modified and customised to suit your needs. It's a good platform for anyone looking to take control of their data and online identity whilst having the convenience to start off with a **no-code solution (write in Markdown and customize with YAML parameters)** and having **flexibility to later add even deeper personalization with HTML and CSS**
-3. You can work with all your favourite tools and apps with hundreds of plugins and integrations to speed up your workflows, interact with your readers, and much more
+In this project, we developed predictive models to estimate Airbnb rental prices and extracted valuable insights to help hosts improve their listings. By leveraging various machine learning techniques, we aim to provide actionable advice to hosts, property managers, and real estate investors.
 
-[//]: # ([![The template is mobile first with a responsive design to ensure that your site looks stunning on every device.]&#40;https://raw.githubusercontent.com/wowchemy/wowchemy-hugo-modules/main/starters/academic/preview.png&#41;]&#40;https://hugoblox.com&#41;)
+## Project Background
 
-### Get Started
+Airbnb is a popular platform for short-term rentals, connecting hosts with potential renters. Our project follows the Cross-Industry Standard Process for Data Mining (CRISP-DM), starting with business understanding, followed by data preparation, modelling, and evaluation. The goal is to build a predictive model for rental prices and discover insights that can help hosts make better decisions.
 
-- 👉 [**Create a new site**](https://hugoblox.com/templates/)
-- 📚 [**Personalize your site**](https://docs.hugoblox.com/)
-- 💬 [Chat with the **Hugo Blox community**](https://discord.gg/z8wNYzb) or [**Hugo community**](https://discourse.gohugo.io)
-- 🐦 Twitter: [@GetResearchDev](https://twitter.com/GetResearchDev) [@GeorgeCushen](https://twitter.com/GeorgeCushen) #MadeWithHugoBlox
-- 💡 [Request a **feature** or report a **bug** for _Hugo Blox_](https://github.com/HugoBlox/hugo-blox-builder/issues)
-- ⬆️ **Updating Hugo Blox?** View the [Update Guide](https://docs.hugoblox.com/reference/update/) and [Release Notes](https://github.com/HugoBlox/hugo-blox-builder/releases)
+### Methodologies
 
-## Crowd-funded open-source software
+- **Data Pre-processing and Cleaning**:
+  - Analyzed missing values and performed data type conversions to ensure clean and usable data.
 
-To help us develop this template and software sustainably under the MIT license, we ask all individuals and businesses that use it to help support its ongoing maintenance and development via sponsorship.
+- **Exploratory Data Analysis (EDA)**:
+  - Conducted univariate, bivariate, and multivariate analyses to understand data distributions and relationships.
 
-### [❤️ Click here to become a sponsor and help support Hugo Blox's future ❤️](https://hugoblox.com/sponsor/)
+- **Feature Engineering**:
+  - Handled missing values, transformed categorical variables, and applied Box Cox and Log1p transformations to normalize data.
 
-As a token of appreciation for sponsoring, you can **unlock [these](https://hugoblox.com/sponsor/) awesome rewards and extra features 🦄✨**
+- **Modelling**:
+  - Implemented various models, including Linear Regression, Ridge, LASSO, Tree-Based Models (LightGBM, XGBoost, Random Forests), Generalized Additive Models, and Neural Networks.
+  - Evaluated model performance using metrics like RMSE, R2, and MAE.
 
-## Ecosystem
+### Experiment Setup
 
-- **[Bibtex To Markdown](https://github.com/GetRD/academic-file-converter):** Automatically import publications from BibTeX
+We used a dataset of Airbnb listings in Sydney, containing detailed information such as rental price, geolocation, property type, room type, and more. The data was pre-processed, and different machine learning models were trained and tested to predict rental prices.
 
-## Inspiration
+### Key Results
 
-[Learn what other **creators**](https://hugoblox.com/creators/) are building with this template.
+- **Model Performance**:
+  - XGBoost emerged as the best-performing model with a test RMSE of 0.4410 and R2 of 0.7546.
 
-## Features
+- **Feature Importance**:
+  - Key features impacting rental prices include the number of bedrooms, accommodates, and property location.
 
-- **Page builder** - Create _anything_ with no-code [**blocks**](https://hugoblox.com/blocks/) and [**elements**](https://docs.hugoblox.com/reference/markdown/)
-- **Edit any type of content** - Blog posts, publications, talks, slides, projects, and more!
-- **Create content** in [**Markdown**](https://docs.hugoblox.com/reference/markdown/), [**Jupyter**](https://docs.hugoblox.com/getting-started/cms/), or [**RStudio**](https://docs.hugoblox.com/getting-started/cms/)
-- **Plugin System** - Fully customizable [**color** and **font themes**](https://docs.hugoblox.com/getting-started/customize/)
-- **Display Code and Math** - Code syntax highlighting and LaTeX math supported
-- **Integrations** - [Google Analytics](https://analytics.google.com), [Disqus commenting](https://disqus.com), Maps, Contact Forms, and more!
-- **Beautiful Site** - Simple and refreshing one-page design
-- **Industry-Leading SEO** - Help get your website found on search engines and social media
-- **Media Galleries** - Display your images and videos with captions in a customizable gallery
-- **Mobile Friendly** - Look amazing on every screen with a mobile friendly version of your site
-- **Multi-language** - 35+ language packs including English, 中文, and Português
-- **Multi-user** - Each author gets their own profile page
-- **Privacy Pack** - Assists with GDPR
-- **Stand Out** - Bring your site to life with animation, parallax backgrounds, and scroll effects
-- **One-Click Deployment** - No servers. No databases. Only files.
+| Model                | Test RMSE | Test R2 | Test MAE | Test RMSE on Price |
+|----------------------|-----------|---------|----------|---------------------|
+| Linear               | 0.4957    | 0.6899  | 0.3678   | 386.5119            |
+| Ridge                | 0.4993    | 0.6854  | 0.3711   | 392.5573            |
+| LASSO                | 0.4959    | 0.6897  | 0.3678   | 387.0839            |
+| LightGBM             | 0.4447    | 0.7504  | 0.3227   | 345.3431            |
+| XGBoost              | 0.4410    | 0.7546  | 0.3181   | 334.4902            |
+| Random Forests       | 0.4618    | 0.7308  | 0.3338   | 349.2299            |
+| Neural Network       | 0.5043    | 0.6791  | 0.3836   | 380.1261            |
+| GAM                  | 0.4773    | 0.7126  | 0.3520   | 361.1443            |
+| Stacking Model       | 0.4429    | 0.7525  | 0.3198   | 335.7857            |
 
-## Themes
+## Experience Reflection
 
-Hugo Blox and its templates come with **automatic day (light) and night (dark) mode** built-in. Visitors can choose their preferred mode by clicking the sun/moon icon in the header.
+This project provided valuable insights into the factors affecting Airbnb rental prices. By using advanced machine learning techniques, we were able to build robust predictive models and uncover important features influencing rental prices. The process also highlighted the importance of thorough data pre-processing and feature engineering in developing accurate models.
 
-[Choose a stunning **theme** and **font**](https://docs.hugoblox.com/getting-started/customize/) for your site. Themes are fully customizable.
+### Conclusion
 
-## License
+Our findings indicate that investing in properties with more bedrooms, higher accommodation capacity, and prime locations can maximize rental income. Hosts should also focus on improving their response time and encouraging positive reviews to enhance their listings' appeal and profitability.
 
-Copyright 2016-present [George Cushen](https://georgecushen.com).
+[Download the full research paper](Airbnb_Price_Prediction_Report.pdf)
 
-Released under the [MIT](https://github.com/HugoBlox/hugo-blox-builder/blob/main/LICENSE.md) license.
+
