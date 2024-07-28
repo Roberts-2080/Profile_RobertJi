@@ -12,10 +12,11 @@ authors:
   - admin
 
 tags:
-  - Data Engineering
   - AI Development
+  - Data Engineering
   - Question-Answering Bot
-  - Wondertek
+  - Platform Engineering
+  - Network Engineering 
 ---
 
 Welcome 👋
