@@ -31,10 +31,11 @@ direnv allow .envrc
 chmod +x .venv/bin/activate
 source .venv/bin/activate
 
-**(Rewrite the configuration file based on your IP address & feel free to try other VPN channel tools for communication!)**
+# Rewrite the configuration file based on your IP address & feel free to try other VPN channel tools for communication!
 1. sll train -c deploy/<task/dataset_name>/configuration file
 2. sll train -peer deploy/<task/dataset_name>/configuration file
-**(we only loaded the the Harvard University's chest x-ray dataset & MNIST in our defaulted dataset, feel free to add & change the model structure!)**
+# we only loaded the the Harvard University's chest x-ray dataset & MNIST in our defaulted dataset, feel free to add & change the model structure!
+
 ```
 
 ## Abstract of the research 
