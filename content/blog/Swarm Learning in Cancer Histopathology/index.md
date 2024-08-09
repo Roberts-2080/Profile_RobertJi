@@ -4,25 +4,48 @@ date: 2024-07-25
 authors:
   - admin
 tags:
-  - Academic
   - Blockchain
-  - Containerisation
+  - Containerisation (Docker)
   - Deep Learning
+  - PowerBI/Tableau
+  - Pytorch/Tensorflow
 image:
   caption:
 ---
 
+## How to use our research ouput?
+
+Currently we have not pubilished the latest version of our project GitHub, but I have uploaded the defaulted project image in the DockerHub.
+
+Follow the below instructions & try on your own Clusters!
+
+```{bash}
+
+docker pull yuji6835/sll_without_dependency
+
+docker run --gpus all -it --net=host <the dockername, like 'yuji6835/sll_without_dependency'> 
+
+rye sync -v
+
+direnv allow .envrc
+chmod +x .venv/bin/activate
+source .venv/bin/activate
+
+**(Rewrite the configuration file based on your IP address & feel free to try other VPN channel tools for communication!)**
+1. sll train -c deploy/<task/dataset_name>/configuration file
+2. sll train -peer deploy/<task/dataset_name>/configuration file
+**(we only loaded the the Harvard University's chest x-ray dataset & MNIST in our defaulted dataset, feel free to add & change the model structure!)**
+```
+
 ## Abstract of the research 
 
-Swarm learning, a distributed machine learning technique, holds promise for enhancing diagnostic accuracy in cancer pathology. This approach addresses the challenge of data interoperability among nodes by transmitting model parameters without a centralized model, thus mitigating issues arising from data privacy concerns. However, existing swarm learning framework relies on complex infrastructures like blockchain, posing barriers to adoption for non-technical users and resource constraints. This study aims to develop a simplified peer-to-peer network model to simulate swarm learning framework, emphasizing modular design to facilitate easier deployment and application. Through experimental validation and comparative analyses, the new framework demonstrates a good model performance, especially in some specific scenarios. The research underscores the potential of distributed machine learning frameworks in healthcare, particularly in improving efficiency in data processing, model synchronization protocols, and aggregation methods. These findings pave the way for future technological advancements in medical diagnostics and advocate further exploration into broader impacts and potential avenues for enhancing swarm learning in healthcare.
+Nowadays, the deep learning models are prevailing while dealing with complex tasks. However, how to preserve the data privacy becomes a big problem. Our project aims to propose and develop a decentralised model training system in different servers to implement the similar functionaility of centralised training models. 
+
+Swarm learning, a distributed deep learning technique, holds promise for enhancing diagnostic accuracy in cancer pathology. This approach addresses the challenge of data interoperability among nodes by transmitting model parameters without a centralized model, thus mitigating issues arising from data privacy concerns. 
+
+Our research underscores the potential of distributed machine learning frameworks in healthcare, particularly in improving efficiency in data processing, model synchronization protocols, and aggregation methods. These findings pave the way for future technological advancements in medical diagnostics and advocate further exploration into broader impacts and potential avenues for enhancing swarm learning in healthcare.
 
 ## Tools and methodologies
-
-To use parallel modeling in a swarm learning (SL) system, focusing on static address simulated servers and dynamic networking including IP and ports, this approach describes the steps required and expected results. It will elaborate on the project proposal for herd studies in histopathology. 
-
-For dynamic networks, it is necessary to use a discovery mechanism to dynamically find and register nodes in the swarm network. The decentralized training process can be broken down into the following steps: Each node (ports in different IPs) starts the tool and exchanges model updates directly without depending on a central server. For security and authentication, we proposed incorporating secure communication mechanisms (e.g., TLS/SSL) and authentication mechanisms, ensuring data integrity and privacy in a dynamic network. Furthermore, monitoring and logging tools were used to evaluate the training set, model transformation, and system performance between nodes. This will help identify and address issues related to network development, latency, and resource allocation. The goal is to effectively implement the Swarm Learning framework in a dynamic web environment. Analysis of system scalability, fault tolerance, and performance under real-world network conditions is another advantage of simulated dynamic networks. 
-
-As an extension of parallel swarm learning, we also introduce a new concept called Peer-to-Peer Swarm Learning (p2p SL). Unlike the traditional Swarm Learning algorithm, which relies on a consensus algorithm built on blockchain technology to generate global models, p2p SL focuses on improving local models. Rather than building an aggregate global model, it is achieved by changing the model weights computed from local datasets at the edge node.
 
 ![Asynchronous_Process](asynchroous_process.jpg)
 
