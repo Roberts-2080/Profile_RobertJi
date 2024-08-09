@@ -23,6 +23,7 @@ Follow the below instructions & try on your own Clusters!
 docker pull yuji6835/sll_without_dependency
 docker run --gpus all -it --net=host <the dockername, like 'yuji6835/sll_without_dependency'> 
 ```
+Then, in the terminal of the container 
 
 ```markdown
 rye sync -v
@@ -46,11 +47,11 @@ Our research underscores the potential of distributed machine learning framework
 
 ## Tools and methodologies
 
-![Asynchronous_Process](asynchroous_process.jpg)
+![Asynchronous_Process](asynchronous_process.jpg)
 
 For machine learning model training, the project tried several basic modeling frameworks, such as a basic convolutional neural network (CNN) modeling framework or a pre-trained MobileNet model. After comparison and evaluation, TorchXRayVision was selected as the pre-trained model. Pre-training with the Harvard University chest x-ray dataset provided a rich set of basic features for the model. To further optimize the training process, the DenseNet decoder module was added. The following picture shows the whole model training architecture. First, an image with an input size of 224x224 is processed by four 4-layer encoder modules to reduce the dimensionality of the input features from 224x224 to 1024, and then the features are nonlinearly transformed from 1152 dimensions to 512 dimensions by a fully connected layer combining batch normalization and ReLU activation functions. Finally, the final classification task is performed by a fully connected layer from 512 to 3 dimensions, combining batch normalization and sigmoid activation function. The selection and optimization of the model structure helps to improve the performance of the model in the chest X-ray image classification task, ensuring the efficiency and accuracy of feature extraction and classification.
 
-![Model_Architecture](model_architecture.png)
+![Model_Architecture](model-architecture.png)
 
 ## Results and findings
 
